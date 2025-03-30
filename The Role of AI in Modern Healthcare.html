@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Modern Healthcare</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(rgba(12, 35, 64, 0.9), rgba(12, 35, 64, 0.9)),
+                        url('https://images.unsplash.com/photo-1579169826645-4d1eeae275c9');
+            background-size: cover;
+            padding: 8rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 5px solid #0c2340;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #0c2340;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            color: #1a5f9e;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: #1a5f9e;
+            margin-bottom: 1rem;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: #f0f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0c2340;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>AI Revolution in Healthcare</h1>
+        <p>Transforming Medicine Through Artificial Intelligence</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Key Applications of AI in Healthcare</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">🤖</div>
+                    <h3>Medical Imaging Analysis</h3>
+                    <p>AI algorithms can analyze X-rays, CT scans, and MRIs with accuracy matching human experts, reducing diagnosis time from hours to seconds.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">💊</div>
+                    <h3>Drug Discovery</h3>
+                    <p>Machine learning models can predict molecular behavior, accelerating drug development from 5 years to 12 months in some cases.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">📈</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Predict patient risks and disease progression using electronic health records and genetic data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Real-World Impact</h2>
+            <div class="case-study">
+                <h3>🏥 Johns Hopkins Hospital Case Study</h3>
+                <p>Implementation of AI-powered sepsis detection system:</p>
+                <ul>
+                    <li>20% reduction in mortality rates</li>
+                    <li>Early detection improved by 85%</li>
+                    <li>Annual cost savings: $4 million</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h3>🧬 Genomics England Project</h3>
+                <p>Using AI for genome analysis:</p>
+                <ul>
+                    <li>Diagnosis time reduced from 4 weeks to 7 minutes</li>
+                    <li>Rare disease identification accuracy: 94%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Future of AI in Medicine</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Personalized Treatment</h3>
+                    <p>AI systems analyzing individual genetic makeup to create customized treatment plans</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Surgical Robotics</h3>
+                    <p>Next-generation robots performing micro-surgeries with sub-millimeter precision</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Mental Health Support</h3>
+                    <p>24/7 AI companions providing cognitive behavioral therapy and emotional support</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 AI Healthcare Initiative. All rights reserved.</p>
+        <p>Ethical AI for Better Healthcare Outcomes</p>
+    </footer>
+</body>
+</html>

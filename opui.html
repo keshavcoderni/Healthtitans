@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Healthcare Assistant</title>
+    <link rel="stylesheet" href="Aics.css">
+</head>
+<body>
+    <button class="home-button" onclick="goHome()">Home</button>
+
+    <video class="background-video" autoplay loop muted playsinline>
+        <source src="keek.mp4" type="video/mp4">
+    </video>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input 
+                type="text" 
+                id="user-input" 
+                placeholder="Ask me anything about healthcare..." 
+                autocomplete="off"
+            />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        let healthdata;
+        let currentContext = {};
+
+        
+        window.onload = function() {
+            addMessageToChat("bot", "👋 Hi! I'm your AI Healthcare Assistant. How can I help you today? You can ask about:");
+            addMessageToChat("bot", "- Symptoms<br>- Prevention methods<br>- Diet charts<br>- Medications<br>Try asking: 'What are the symptoms of flu?'");
+        }
+
+        async function loadHealthdata() {
+            try {
+                const response = await fetch('healthdata.json');
+                healthdata = await response.json();
+                console.log("Health data loaded successfully");
+            } catch (error) {
+                console.error("Error loading health data:", error);
+                addMessageToChat("bot", "⚠️ Sorry, I'm having trouble accessing medical data. Please try again later.");
+            }
+        }
+
+        loadHealthdata();
+
+        function goHome() {
+            window.location.href = "net.html";
+        }
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessageToChat("user", message);
+                userInput.value = '';
+                simulateTypingIndicator();
+                setTimeout(() => getBotResponse(message), 1000);
+            }
+        }
+
+        function addMessageToChat(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender === "user" ? 'user-message' : 'bot-message');
+            messageElement.innerHTML = `
+                <div>${message}</div>
+                <div class="timestamp">${new Date().toLocaleTimeString()}</div>
+            `;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function simulateTypingIndicator() {
+            const typingIndicator = document.createElement('div');
+            typingIndicator.classList.add('typing-indicator', 'bot-message');
+            typingIndicator.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            chatBox.appendChild(typingIndicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            setTimeout(() => typingIndicator.remove(), 1000);
+        }
+
+        function getBotResponse(message) {
+            if (!healthdata) {
+                addMessageToChat("bot", "⚠️ Medical database not loaded. Please refresh the page.");
+                return;
+            }
+
+            const lowered = message.toLowerCase();
+            let response = '';
+            
+            // Handle greetings
+            if (/(hi|hello|hey)/.test(lowered)) {
+                response = "👋 Hello! How can I assist you with healthcare information today?";
+                addMessageToChat("bot", response);
+                return;
+            }
+
+            // Handle context-based follow-up
+            if (currentContext.disease && !/(new|another|change)/.test(lowered)) {
+                response = handleFollowUp(lowered, currentContext.disease);
+                if (response) {
+                    addMessageToChat("bot", response);
+                    return;
+                }
+            }
+
+            
+            const diseaseMatch = findBestDiseaseMatch(lowered);
+            if (diseaseMatch) {
+                currentContext.disease = diseaseMatch;
+                response = handleDiseaseQuery(lowered, diseaseMatch);
+            } else {
+                response = "🔍 I'm sorry, I didn't understand. Could you please rephrase or specify a health condition? (e.g., 'Tell me about diabetes prevention')";
+            }
+
+            addMessageToChat("bot", response);
+        }
+
+        function findBestDiseaseMatch(message) {
+            const diseases = Object.keys(healthdata);
+            return diseases.find(disease => 
+                new RegExp(`\\b${disease}\\b`, 'i').test(message)
+            );
+        }
+
+        function handleDiseaseQuery(message, disease) {
+            const details = healthdata[disease];
+            let response = `<strong>${disease.charAt(0).toUpperCase() + disease.slice(1)} Information:</strong><br>`;
+
+            if (/(describe|what is)/.test(message)) {
+                response += `📝 ${details.description}`;
+            } else if (/(symptom|sign)/.test(message)) {
+                response += `🤒 <strong>Symptoms:</strong> ${details.symptoms}`;
+            } else if (/(prevent|avoid)/.test(message)) {
+                response += `🛡️ <strong>Prevention:</strong> ${details.prevention}`;
+            } else if (/(diet|food|eat)/.test(message)) {
+                response += `🍽️ <strong>Diet Chart:</strong><ul>${
+                    details.diet_chart.map(meal => 
+                        `<li><strong>${meal.time}:</strong> ${meal.items.join(", ")}</li>`
+                    ).join('')
+                }</ul>`;
+            } else if (/(medic|prescription|drug)/.test(message)) {
+                response += `💊 <strong>Medications:</strong><ul>${
+                    details.prescription.map(med => 
+                        `<li>${med.medicine}: ${med.dosage} (${med.notes})</li>`
+                    ).join('')
+                }</ul>`;
+            } else {
+                response = `ℹ️ Here's an overview of ${disease}:<br>
+                    - Description: ${details.description}<br>
+                    - Main Symptoms: ${details.symptoms.split(', ').slice(0,3).join(', ')}...<br>
+                    Ask about: symptoms, prevention, diet, or medications for more details.`;
+            }
+
+            return response;
+        }
+
+        function handleFollowUp(message, disease) {
+            const details = healthdata[disease];
+            if (/(symptom|sign)/.test(message)) {
+                return `🤒 <strong>${disease} Symptoms:</strong> ${details.symptoms}`;
+            }
+            if (/(prevent|avoid)/.test(message)) {
+                return `🛡️ <strong>Prevention for ${disease}:</strong> ${details.prevention}`;
+            }
+            if (/(diet|food)/.test(message)) {
+                return `🍽️ <strong>Diet for ${disease}:</strong><ul>${
+                    details.diet_chart.map(meal => 
+                        `<li><strong>${meal.time}:</strong> ${meal.items.join(", ")}</li>`
+                    ).join('')
+                }</ul>`;
+            }
+            return null;
+        }
+
+        userInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

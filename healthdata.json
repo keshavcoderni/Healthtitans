@@ -1,0 +1,331 @@
+{
+    "fever": {
+        "description": 
+        "A fever is a temporary increase in your body temperature, often due to an illness.",
+        "symptoms": 
+        "High body temperature, sweating, chills, and shivering.",
+        "prevention": 
+        "Stay hydrated, avoid excessive heat, and rest to recover.",
+        "diet_chart":
+         [
+            { "time": "Morning", "items": ["Warm water with honey", "Light porridge", "Apple"] },
+            { "time": "Lunch", "items": ["Rice", "Boiled vegetables", "Chicken soup"] },
+            { "time": "Evening", "items": ["Herbal tea", "Toast"] },
+            { "time": "Dinner", "items": ["Light khichdi", "Boiled carrots"] }
+        ],
+        "prescription": 
+        [
+            { "medicine": "Paracetamol", "dosage": "500mg every 6 hours", "notes": "Only if fever exceeds 100°F" },
+            { "medicine": "ORS", "dosage": "1 sachet after every episode of sweating", "notes": "To prevent dehydration" }
+        ],
+        "chart_labels": ["Hydration", "Rest", "Avoid heat"],
+        "chart_data": [60, 30, 10]
+    },
+    "cold": {
+        "description": "The common cold is a viral infection of your nose and throat.",
+        "symptoms": "Runny or stuffy nose, sore throat, cough, and sneezing.",
+        "prevention": "Wash your hands frequently, avoid close contact with sick individuals, and keep your immune system healthy.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Warm lemon water", "Oats with honey"] },
+            { "time": "Lunch", "items": ["Chicken soup", "Rice"] },
+            { "time": "Evening", "items": ["Herbal tea", "Guava or orange"] },
+            { "time": "Dinner", "items": ["Steamed vegetables", "Light porridge"] }
+        ],
+        "prescription": [
+            { "medicine": "Antihistamine", "dosage": "1 tablet daily", "notes": "For nasal congestion" },
+            { "medicine": "Cough syrup", "dosage": "2 teaspoons every 8 hours", "notes": "If coughing persists" }
+        ],
+        "chart_labels": ["Hygiene", "Avoid contact", "Boost immunity"],
+        "chart_data": [40, 35, 25]
+    },
+    "headache": {
+        "description": "A headache is pain in any region of the head, and can be caused by various factors.",
+        "symptoms": "Pain in the head or neck, sensitivity to light, and dizziness.",
+        "prevention": "Stay hydrated, manage stress, get enough sleep, and avoid triggers such as strong smells or loud noises.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Warm water", "Whole-grain toast"] },
+            { "time": "Lunch", "items": ["Brown rice", "Steamed fish or tofu"] },
+            { "time": "Evening", "items": ["Green tea", "Nuts or seeds"] },
+            { "time": "Dinner", "items": ["Salad with olive oil", "Grilled chicken"] }
+        ],
+        "prescription": [
+            { "medicine": "Ibuprofen", "dosage": "200mg as needed", "notes": "Take after meals to avoid stomach upset" },
+            { "medicine": "Relaxation techniques", "dosage": "Daily before sleep", "notes": "Helps reduce stress-induced headaches" }
+        ],
+        "chart_labels": ["Hydration", "Stress management", "Sleep"],
+        "chart_data": [50, 30, 20]
+    },
+    "fatigue": {
+        "description": "Fatigue is a feeling of constant tiredness or weakness and can be physical, mental, or a combination of both.",
+        "symptoms": "Tiredness, lack of energy, and feeling weak or drained.",
+        "prevention": "Maintain a balanced diet, exercise regularly, and ensure adequate rest.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Smoothie with spinach and banana", "Eggs"] },
+            { "time": "Lunch", "items": ["Quinoa salad", "Grilled chicken or tofu"] },
+            { "time": "Evening", "items": ["Greek yogurt", "Mixed berries"] },
+            { "time": "Dinner", "items": ["Lentil soup", "Steamed broccoli"] }
+        ],
+        "prescription": [
+            { "medicine": "Multivitamins", "dosage": "1 tablet daily", "notes": "For general energy boost" },
+            { "medicine": "Iron supplements", "dosage": "As prescribed", "notes": "If fatigue is due to anemia" }
+        ],
+        "chart_labels": ["Balanced diet", "Exercise", "Rest"],
+        "chart_data": [40, 30, 30]
+    },
+    "diabetes": {
+        "description": "Diabetes is a chronic condition that affects how your body processes blood sugar (glucose).",
+        "symptoms": "Increased thirst, frequent urination, hunger, fatigue, and blurred vision.",
+        "prevention": "Maintain a healthy weight, eat a balanced diet, and exercise regularly.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Whole-grain toast", "Low-fat yogurt"] }, 
+            { "time": "Lunch", "items": ["Grilled chicken or tofu", "Steamed vegetables"] },
+            { "time": "Evening", "items": ["Nuts or seeds", "Green tea"] },
+            { "time": "Dinner", "items": ["Salad", "Brown rice"] }
+        ],
+        "prescription": [
+            { "medicine": "Metformin", "dosage": "500mg twice a day", "notes": "Take with meals to reduce side effects" },
+            { "medicine": "Insulin", "dosage": "As prescribed", "notes": "Monitor blood sugar levels regularly" }
+        ],
+        "chart_labels": ["Diet", "Exercise", "Weight management"],
+        "chart_data": [50, 30, 20]
+    },
+    "hypertension": {
+        "description": "Hypertension is high blood pressure that can lead to serious health issues over time.",
+        "symptoms": "Often no symptoms, but can include headaches, shortness of breath, or nosebleeds.",
+        "prevention": "Limit salt intake, exercise regularly, avoid excessive alcohol, and manage stress.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Oats", "Low-fat milk"] },
+            { "time": "Lunch", "items": ["Grilled fish", "Steamed vegetables"] },
+            { "time": "Evening", "items": ["Fruit like guava", "Green tea"] },
+            { "time": "Dinner", "items": ["Brown rice", "Leafy greens"] }
+        ],
+        "prescription": [
+            { "medicine": "ACE inhibitors", "dosage": "As prescribed", "notes": "Lowers blood pressure" },
+            { "medicine": "Diuretics", "dosage": "As prescribed", "notes": "Reduces water retention" }
+        ],
+        "chart_labels": ["Salt reduction", "Exercise", "Stress management"],
+        "chart_data": [40, 30, 30]
+    },
+    "asthma": {
+        "description": "Asthma is a condition in which your airways narrow and swell, causing difficulty breathing.",
+        "symptoms": "Shortness of breath, wheezing, coughing, and chest tightness.",
+        "prevention": "Avoid triggers such as smoke, dust, and pollen, and manage stress.",
+        "diet_chart": [
+            { "time": "Morning", "items": ["Warm water", "Fruits like apple"] },
+            { "time": "Lunch", "items": ["Grilled chicken", "Vegetable soup"] },
+            { "time": "Evening", "items": ["Green tea", "Dry fruits"] },
+            { "time": "Dinner", "items": ["Salad", "Steamed rice"] }
+        ],
+        "prescription": [
+            { "medicine": "Bronchodilator inhaler", "dosage": "As needed", "notes": "Use during an asthma attack" },
+            { "medicine": "Anti-inflammatory", "dosage": "As prescribed", "notes": "Prevents airway swelling" }
+        ],
+        "chart_labels": ["Avoid allergens", "Medication adherence", "Breathing exercises"],
+        "chart_data": [40, 40, 20]
+    },
+    "allergy": {
+            "description": "Allergies occur when your immune system reacts to a foreign substance like pollen or pet dander.",
+            "symptoms": "Sneezing, itching, rash, or swelling, depending on the type of allergy.",
+            "prevention": "Avoid known allergens, keep your living space clean, and consult with an allergist for specific advice.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Oatmeal", "Herbal tea"] },
+                { "time": "Lunch", "items": ["Chicken soup", "Vegetable salad"] },
+                { "time": "Evening", "items": ["Apple slices", "Nuts"] },
+                { "time": "Dinner", "items": ["Steamed vegetables", "Grilled fish"] }
+            ],
+            "prescription": [
+                { "medicine": "Antihistamines", "dosage": "1 tablet daily", "notes": "Reduces allergic reactions" },
+                { "medicine": "Corticosteroids", "dosage": "As prescribed", "notes": "Helps with severe allergic reactions" }
+            ],
+            "chart_labels": ["Avoid allergens", "Medication adherence", "Hydration"],
+            "chart_data": [50, 40, 10]
+        },
+        "flu": {
+            "description": "The flu is a viral infection that attacks your respiratory system.",
+            "symptoms": "Fever, chills, muscle aches, cough, congestion, runny nose, headaches, and fatigue.",
+            "prevention": "Get the flu vaccine annually, wash hands frequently, and avoid close contact with sick people.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Warm lemon water", "Oats with honey"] },
+                { "time": "Lunch", "items": ["Chicken soup", "Steamed vegetables"] },
+                { "time": "Evening", "items": ["Herbal tea", "Fruit like guava"] },
+                { "time": "Dinner", "items": ["Light porridge", "Grilled chicken"] }
+            ],
+            "prescription": [
+                { "medicine": "Antiviral medications", "dosage": "As prescribed", "notes": "Helps reduce flu symptoms" },
+                { "medicine": "Cough syrup", "dosage": "2 teaspoons every 6 hours", "notes": "For dry cough" }
+            ],
+            "chart_labels": ["Flu vaccine", "Hydration", "Rest"],
+            "chart_data": [60, 30, 10]
+        },
+        "stomach ulcer": {
+            "description": "A stomach ulcer is an open sore on the lining of the stomach.",
+            "symptoms": "Burning stomach pain, bloating, and nausea.",
+            "prevention": "Avoid excessive use of pain relievers, limit alcohol, and avoid smoking.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Warm water", "Boiled egg"] },
+                { "time": "Lunch", "items": ["Rice", "Steamed vegetables"] },
+                { "time": "Evening", "items": ["Banana", "Herbal tea"] },
+                { "time": "Dinner", "items": ["Light soup", "Boiled potatoes"] }
+            ],
+            "prescription": [
+                { "medicine": "Proton pump inhibitors", "dosage": "As prescribed", "notes": "Reduces stomach acid" },
+                { "medicine": "Antacids", "dosage": "As needed", "notes": "Helps with stomach pain" }
+            ],
+            "chart_labels": ["Avoid spicy food", "Medication adherence", "Rest"],
+            "chart_data": [40, 40, 20]
+        },
+        "migraine": {
+            "description": "A migraine is an intense headache that can be accompanied by nausea and sensitivity to light.",
+            "symptoms": "Throbbing pain on one side of the head, sensitivity to light and sound, nausea, and vomiting.",
+            "prevention": "Identify and avoid triggers, manage stress, and establish a regular sleep pattern.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Green tea", "Whole-grain toast"] },
+                { "time": "Lunch", "items": ["Rice", "Grilled chicken"] },
+                { "time": "Evening", "items": ["Herbal tea", "Fruits like watermelon"] },
+                { "time": "Dinner", "items": ["Light soup", "Steamed vegetables"] }
+            ],
+            "prescription": [
+                { "medicine": "Triptans", "dosage": "As prescribed", "notes": "To relieve migraine symptoms" },
+                { "medicine": "Pain relievers", "dosage": "As needed", "notes": "To alleviate headache pain" }
+            ],
+            "chart_labels": ["Hydration", "Avoid triggers", "Medication adherence"],
+            "chart_data": [50, 30, 20]
+        },
+        "cancer": {
+            "description": "Cancer is a disease caused by uncontrolled cell growth and can affect any part of the body.",
+            "symptoms": "Varies by type, but can include unexplained weight loss, fatigue, pain, and changes in bodily functions.",
+            "prevention": "Maintain a healthy diet, exercise regularly, avoid smoking, and limit alcohol consumption.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Oatmeal", "Berries"] },
+                { "time": "Lunch", "items": ["Grilled salmon", "Leafy greens"] },
+                { "time": "Evening", "items": ["Carrot juice", "Nuts"] },
+                { "time": "Dinner", "items": ["Brown rice", "Grilled vegetables"] }
+            ],
+            "prescription": [
+                { "medicine": "Chemotherapy", "dosage": "As prescribed", "notes": "To target cancer cells" },
+                { "medicine": "Pain relievers", "dosage": "As needed", "notes": "To manage pain" }
+            ],
+            "chart_labels": ["Healthy diet", "Exercise", "Regular screening"],
+            "chart_data": [60, 30, 10]
+        },
+        "anemia": {
+            "description": "Anemia is a condition where you lack enough healthy red blood cells to carry oxygen to your body’s tissues.",
+            "symptoms": "Fatigue, weakness, pale skin, shortness of breath, and dizziness.",
+            "prevention": "Eat iron-rich foods, get enough vitamin B12, and maintain a balanced diet.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Spinach smoothie", "Whole-wheat toast"] },
+                { "time": "Lunch", "items": ["Grilled chicken", "Quinoa salad"] },
+                { "time": "Evening", "items": ["Nuts", "Fruit like oranges"] },
+                { "time": "Dinner", "items": ["Lentils", "Steamed broccoli"] }
+            ],
+            "prescription": [
+                { "medicine": "Iron supplements", "dosage": "As prescribed", "notes": "Helps increase iron levels" },
+                { "medicine": "Vitamin B12", "dosage": "As prescribed", "notes": "Promotes red blood cell production" }
+            ],
+            "chart_labels": ["Iron-rich foods", "Supplements", "Hydration"],
+            "chart_data": [50, 40, 10]
+        },
+        "arthritis": {
+            "description": "Arthritis is inflammation of one or more of your joints, causing pain and stiffness.",
+            "symptoms": "Joint pain, stiffness, swelling, and reduced range of motion.",
+            "prevention": "Maintain a healthy weight, exercise regularly, and avoid joint injuries.",
+            "diet_chart": [
+                { "time": "Morning", "items": ["Oatmeal", "Almond milk"] },
+                { "time": "Lunch", "items": ["Salmon", "Steamed vegetables"] },
+                { "time": "Evening", "items": ["Green tea", "Berries"] },
+                { "time": "Dinner", "items": ["Brown rice", "Grilled chicken"] }
+            ],
+            "prescription": [
+                { "medicine": "NSAIDs", "dosage": "As prescribed", "notes": "Helps with pain and inflammation" },
+                { "medicine": "Corticosteroids", "dosage": "As prescribed", "notes": "To reduce inflammation" }
+            ],
+            "chart_labels": ["Weight management", "Exercise", "Pain management"],
+            "chart_data": [50, 30, 20]
+        },
+        "covid-19": {
+                "description": "COVID-19 is a contagious disease caused by the SARS-CoV-2 virus.",
+                "symptoms": "Fever, cough, loss of taste or smell, difficulty breathing, fatigue, and body aches.",
+                "prevention": "Get vaccinated, wear masks in crowded places, maintain social distancing, and wash hands frequently.",
+                "diet_chart": [
+                    { "time": "Morning", "items": ["Warm water with lemon", "Oatmeal"] },
+                    { "time": "Lunch", "items": ["Grilled chicken", "Steamed broccoli"] },
+                    { "time": "Evening", "items": ["Herbal tea", "Nuts"] },
+                    { "time": "Dinner", "items": ["Brown rice", "Grilled fish"] }
+                ],
+                "prescription": [
+                    { "medicine": "Paracetamol", "dosage": "500mg every 6 hours", "notes": "For fever management" },
+                    { "medicine": "Vitamin C", "dosage": "500mg daily", "notes": "Boosts immunity" }
+                ],
+                "chart_labels": ["Vaccination", "Mask wearing", "Social distancing"],
+                "chart_data": [50, 30, 20]
+            },
+            "bronchitis": {
+                "description": "Bronchitis is inflammation of the lining of the bronchial tubes, often caused by a viral infection.",
+                "symptoms": "Coughing with mucus, chest discomfort, shortness of breath, and fatigue.",
+                "prevention": "Avoid smoking, wash hands frequently, and avoid air pollutants.",
+                "diet_chart": [
+                    { "time": "Morning", "items": ["Warm water", "Boiled egg"] },
+                    { "time": "Lunch", "items": ["Vegetable soup", "Steamed rice"] },
+                    { "time": "Evening", "items": ["Fruit juice", "Nuts"] },
+                    { "time": "Dinner", "items": ["Light porridge", "Boiled carrots"] }
+                ],
+                "prescription": [
+                    { "medicine": "Cough syrup", "dosage": "2 teaspoons every 8 hours", "notes": "Relieves cough" },
+                    { "medicine": "Bronchodilators", "dosage": "As prescribed", "notes": "Improves breathing" }
+                ],
+                "chart_labels": ["Avoid smoking", "Medication", "Hygiene"],
+                "chart_data": [40, 30, 30]
+            },
+            "pneumonia": {
+                "description": "Pneumonia is a lung infection caused by bacteria, viruses, or fungi.",
+                "symptoms": "Cough, fever, chills, and difficulty breathing.",
+                "prevention": "Get vaccinated, practice good hygiene, and avoid smoking.",
+                "diet_chart": [
+                    { "time": "Morning", "items": ["Warm water with honey", "Fruits like orange"] },
+                    { "time": "Lunch", "items": ["Grilled fish", "Leafy greens"] },
+                    { "time": "Evening", "items": ["Herbal tea", "Toast"] },
+                    { "time": "Dinner", "items": ["Steamed rice", "Chicken soup"] }
+                ],
+                "prescription": [
+                    { "medicine": "Antibiotics", "dosage": "As prescribed", "notes": "For bacterial pneumonia" },
+                    { "medicine": "Pain relievers", "dosage": "As needed", "notes": "Helps with chest discomfort" }
+                ],
+                "chart_labels": ["Vaccination", "Hygiene", "Avoid smoking"],
+                "chart_data": [50, 30, 20]
+            },
+            "hepatitis": {
+                "description": "Hepatitis is inflammation of the liver, usually caused by viral infections.",
+                "symptoms": "Jaundice, fatigue, abdominal pain, and dark urine.",
+                "prevention": "Get vaccinated (for hepatitis A and B), avoid sharing needles, and practice safe sex.",
+                "diet_chart": [
+                    { "time": "Morning", "items": ["Warm water", "Whole-grain toast"] },
+                    { "time": "Lunch", "items": ["Grilled chicken", "Steamed vegetables"] },
+                    { "time": "Evening", "items": ["Herbal tea", "Nuts"] },
+                    { "time": "Dinner", "items": ["Brown rice", "Grilled fish"] }
+                ],
+                "prescription": [
+                    { "medicine": "Antiviral drugs", "dosage": "As prescribed", "notes": "For viral hepatitis" },
+                    { "medicine": "Liver supplements", "dosage": "As prescribed", "notes": "Supports liver health" }
+                ],
+                "chart_labels": ["Vaccination", "Safe practices", "Healthy diet"],
+                "chart_data": [50, 30, 20]
+            },
+            "malaria": {
+                "description": "Malaria is a mosquito-borne disease caused by parasites.",
+                "symptoms": "Fever, chills, headache, and muscle pain.",
+                "prevention": "Use mosquito nets, wear protective clothing, and take antimalarial drugs if traveling to affected areas.",
+                "diet_chart": [
+                    { "time": "Morning", "items": ["Boiled water", "Banana"] },
+                    { "time": "Lunch", "items": ["Steamed vegetables", "Chicken soup"] },
+                    { "time": "Evening", "items": ["Fruit juice", "Crackers"] },
+                    { "time": "Dinner", "items": ["Light porridge", "Boiled potatoes"] }
+                ],
+                "prescription": [
+                    { "medicine": "Antimalarial drugs", "dosage": "As prescribed", "notes": "To treat or prevent malaria" },
+                    { "medicine": "Paracetamol", "dosage": "500mg every 6 hours", "notes": "For fever management" }
+                ],
+                "chart_labels": ["Mosquito nets", "Medication", "Hygiene"],
+                "chart_data": [50, 30, 20]
+            }
+        }
+        

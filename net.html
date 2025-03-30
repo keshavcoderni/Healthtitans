@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Healthcare AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Maincs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="HealthCare Assistant Logo">
+            <span>Healthcare AI Assistant</span>
+        </div>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#services">Services</a>
+            <a href="ai-features.html">AI Features</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#blog">Blog</a>
+            <a href="login.html" onclick="openModal()">Login</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section with Video Background -->
+    <section class="banner">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="keek.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Empowering Healthcare with AI</h1>
+        <p>Revolutionizing healthcare with cutting-edge AI technology.</p>
+        <a href="opui.html" class="styled-button">Get Information from AI</a>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content" id="services">
+        <div class="content-section">
+            <h2>AI-powered Health Advice</h2>
+            <p>Our platform provides personalized health advice using AI technology, helping you make informed decisions about your well-being.</p>
+        </div>
+        <div class="content-section">
+            <h2>24/7 Health Monitoring</h2>
+            <p>Monitor your health round the clock with our easy-to-use AI-powered monitoring tools, ensuring peace of mind and well-being.</p>
+        </div>
+        <div class="content-section">
+            <h2>Consultation Services</h2>
+            <p>Connect with healthcare professionals for expert advice on treatments, medical queries, and overall wellness anytime, anywhere.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>Testimonials 
+            <i class="fas fa-pencil-alt add-testimonial" onclick="addTestimonial()" style="cursor: pointer; margin-left: 10px;"></i>
+        </h2>
+        <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial">
+                <p contenteditable="true">"This AI assistant has completely transformed the way I manage my health. It's like having a doctor in my pocket!"</p>
+                <h3 contenteditable="true">- John Doe</h3>
+            </div>
+            <div class="testimonial">
+                <p contenteditable="true">"I love how easy it is to get reliable information about symptoms and treatments. The AI is accurate and super helpful."</p>
+                <h3 contenteditable="true">- Sarah Smith</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <h2>Latest Blog Articles</h2>
+        <div class="blog-post">
+            <h3>The Role of AI in Modern Healthcare</h3>
+            <p>Learn how AI is revolutionizing the healthcare industry by improving diagnosis, treatment, and patient care.</p>
+            <a href="The Role of AI in Modern Healthcare.html">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3>5 Ways AI Can Improve Your Health</h3>
+            <p>Discover the top ways AI can assist in personal health management and empower you to take control of your well-being.</p>
+            <a href="5 Ways AI Can Improve Your Health.html">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3>Future of AI in Healthcare</h3>
+            <p>A look into the future potential of AI and how it's shaping the next generation of healthcare solutions.</p>
+            <a href="Future of AI in Healthcare.html">Read More</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Healthcare AI Assistant. All rights reserved.
+        <br>
+        <a href="terms and condition.html">Privacy Policy</a> | <a href="terms and condition.html">Terms of condition</a>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/anushkasen0408/?hl=en"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>        
+    </footer>
+    <script>
+        function openModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function getAIInfo() {
+            // Function to get information from AI
+            alert("Fetching AI Information...");
+        }
+    </script>
+
+    <!-- JavaScript for Adding Testimonials -->
+    <script>
+        function addTestimonial() {
+            const testimonialContainer = document.getElementById('testimonialSlider');
+            const newTestimonial = document.createElement('div');
+            newTestimonial.className = 'testimonial';
+            newTestimonial.innerHTML = `
+                <p contenteditable="true">"Enter your testimonial here..."</p>
+                <h3 contenteditable="true">- Your Name</h3>
+            `;
+            testimonialContainer.appendChild(newTestimonial);
+        }
+    </script>
+</body>
+</html>

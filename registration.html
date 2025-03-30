@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <style>
+      /* [Keep all your existing styles] */
+        /* General Reset */
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      /* Registration Container */
+      .register-container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .register-container h2 {
+        margin-bottom: 1.5rem;
+        color: #4facfe;
+      }
+
+      /* Input Group Styling */
+      .input-group {
+        margin-bottom: 1.2rem;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      .input-group input:focus {
+        border-color: #4facfe;
+        box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+      }
+
+      /* Button Styling */
+      .btn {
+        background: #4facfe;
+        color: #fff;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #00f2fe;
+        box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+      }
+
+      /* Login Link */
+      .login-link {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .login-link a {
+        color: #4facfe;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      /* Error Message */
+      .error {
+        color: red;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: none;
+      }
+      
+      /* Add modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+      }
+      
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .modal-content p {
+        margin: 15px 0;
+      }
+      
+      .modal-btn {
+        background: #4facfe;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <h3>Registration Successful!</h3>
+        <p>You can now login with your credentials.</p>
+        <button class="modal-btn" id="continueBtn">Continue to Login</button>
+      </div>
+    </div>
+
+    <div class="register-container">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <div class="error" id="errorMessage">All fields are required!</div>
+
+        <div class="input-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+        <p class="login-link">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const fullname = document.getElementById("fullname").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value;
+          const confirmPassword = document.getElementById("confirmPassword").value;
+          const errorMessage = document.getElementById("errorMessage");
+
+          // Clear previous errors
+          errorMessage.style.display = "none";
+
+          // Validation
+          if (!fullname || !email || !username || !password || !confirmPassword) {
+            errorMessage.textContent = "All fields are required!";
+            errorMessage.style.display = "block";
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            errorMessage.textContent = "Passwords do not match!";
+            errorMessage.style.display = "block";
+            return;
+          }
+
+          try {
+            const response = await fetch("http://localhost:5000/api/auth/register", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ fullname, email, username, password }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              // Show success modal
+              const modal = document.getElementById("successModal");
+              modal.style.display = "block";
+              
+              // Set up continue button
+              document.getElementById("continueBtn").addEventListener("click", () => {
+                window.location.href = "login.html?registered=true";
+              });
+              
+              // Auto-redirect after 3 seconds
+              setTimeout(() => {
+                window.location.href = "login.html?registered=true";
+              }, 300);
+              
+            } else {
+              errorMessage.textContent = result.message || "Registration failed!";
+              errorMessage.style.display = "block";
+            }
+          } catch (error) {
+            errorMessage.textContent = "An error occurred. Please try again.";
+            errorMessage.style.display = "block";
+            console.error("Registration error:", error);
+          }
+        });
+    </script>
+  </body>
+</html>
